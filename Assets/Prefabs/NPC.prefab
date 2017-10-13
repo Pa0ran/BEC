@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 50211406009919564}
   - component: {fileID: 61697451984461490}
   - component: {fileID: 114826019364478732}
+  - component: {fileID: 114053292045081478}
   m_Layer: 0
   m_Name: NPC
   m_TagString: NPC
@@ -104,6 +105,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.29912174, y: 0.296118}
   m_EdgeRadius: 0
+--- !u!114 &114053292045081478
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1385798136492140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f19e23ec2d379bb40b40a39b75f8a7ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxSpeed: 1
+  MoveMode: Vertical
 --- !u!114 &114826019364478732
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -115,16 +129,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca23b8bef6734b149b9ddcf70ce1fd0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  optionChoice: -1
+  doneConversation: 0
   dialogue:
     name: 
     sentences: []
     options: []
+    sentences0: []
+    options0: []
     sentences1: []
     options1: []
     sentences2: []
     options2: []
-    sentences3: []
-    options3: []
 --- !u!212 &212830412711616852
 SpriteRenderer:
   m_ObjectHideFlags: 1

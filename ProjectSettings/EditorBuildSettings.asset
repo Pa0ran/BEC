@@ -6,11 +6,26 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/MainMenu.unity
-    guid: 94ad1d7dbe4bbba4dbe4e0084e555f1c
+    path: Assets/Scenes/PersistentCanvas.unity
+    guid: 454b89220aa89644a9b46c0769700e5e
   - enabled: 1
     path: Assets/Scenes/Dungeon.unity
     guid: c10c8b5deddebd9488788cb1bea17f52
+  - enabled: 0
+    path: Assets/Scenes/MainMenu.unity
+    guid: 94ad1d7dbe4bbba4dbe4e0084e555f1c
   - enabled: 1
-    path: Assets/Scenes/PersistentCanvas.unity
-    guid: 454b89220aa89644a9b46c0769700e5e
+    path: Assets/Scenes/Outside.unity
+    guid: 21697131a4903ac4e954a2333415d746
+  - enabled: 1
+    path: Assets/Scenes/Upstairs.unity
+    guid: 7d69aa41c05981b4089d730219633a09
+  - enabled: 1
+    path: Assets/Scenes/Priest's House.unity
+    guid: beda91b86cd24af448ab4ef73c9c93e7
+  - enabled: 1
+    path: Assets/Scenes/Corridor.unity
+    guid: 507e8b8f2b4bea64882207c0e55e36be
+  - enabled: 1
+    path: Assets/Scenes/Queen's Bedroom.unity
+    guid: 1e53e4f1fbe0d774b834485d37bd93e7

@@ -12,6 +12,7 @@ public class DialogueManager : MonoBehaviour {
 	public Button option2;
 	public Button option3;
 	public Button continueButton;
+	public Text TextContinue;
 	public Text choice1;
 	public Text choice2;
 	public Text choice3;
@@ -19,10 +20,23 @@ public class DialogueManager : MonoBehaviour {
 	public Dictionary<string,string[]> ListOptions;
 	private Queue<string> sentences;
 	private Dialogue tempDia;
+	public DialogueTrigger DT;
+	public bool endIt;
 	void Start () {
 		ListOptions = new Dictionary<string,string[]> ();
 		sentences = new Queue<string> ();
 		DiaCanvas = GameObject.Find ("CanvasDialogue").GetComponent <Canvas> ();
+	}
+	void Update()
+	{
+		if(endIt == true){
+			if(sentences.Count == 0){
+				TextContinue.text = "Leave";
+				continueButton.onClick.AddListener (() => (DisplayLastSentence ()));
+				endIt = false;
+			}
+		}
+
 	}
 	public void StartDialogue(Dialogue dialogue)
 	{
@@ -37,7 +51,12 @@ public class DialogueManager : MonoBehaviour {
 			sentences.Enqueue (sentence);
 		}
 
-		DisplayNextSentence ();
+		string firstSentence = sentences.Dequeue ();
+		StopAllCoroutines ();
+		StartCoroutine (TypeSentence (firstSentence));
+		if (sentences.Count == 0){
+			EnableButtons ();
+		}
 	}
 	
 	public void DisplayNextSentence()
@@ -45,14 +64,16 @@ public class DialogueManager : MonoBehaviour {
 
 		if(sentences.Count == 0)
 		{
+
 			EnableButtons ();
 			Debug.Log ("End of conversations");
-			//EndDialogue ();
 			return;
 		}
-		string sentence = sentences.Dequeue ();
+		string firstSentence = sentences.Dequeue ();
 		StopAllCoroutines ();
-		StartCoroutine (TypeSentence (sentence));
+		StartCoroutine (TypeSentence (firstSentence));
+	
+
 	}
 	IEnumerator TypeSentence (string sentence)
 	{
@@ -63,8 +84,20 @@ public class DialogueManager : MonoBehaviour {
 			yield return new WaitForSecondsRealtime(0.02f);
 		}
 	}
+
+	public void DisplayLastSentence()
+	{
+		TextContinue.text = "Continue";
+		EndDialogue ();	
+		continueButton.onClick.RemoveAllListeners();
+		DisableButtons ();
+		endIt = false;
+
+	}
 	public void NextDialogue(int option)
 	{
+		DT.doneConversation = true;
+		DT.optionChoice = option;
 		sentences.Clear ();
 		if(option == 0)
 		{
@@ -72,6 +105,9 @@ public class DialogueManager : MonoBehaviour {
 			{
 				sentences.Enqueue (sentence);
 			}
+			DisableButtons ();
+			endIt = true;
+			
 			DisplayNextSentence ();
 		}
 		if(option == 1)
@@ -80,6 +116,9 @@ public class DialogueManager : MonoBehaviour {
 			{
 				sentences.Enqueue (sentence);
 			}
+			endIt = true;
+
+			DisableButtons ();
 			DisplayNextSentence ();
 		}
 		if(option == 2)
@@ -88,6 +127,9 @@ public class DialogueManager : MonoBehaviour {
 			{
 				sentences.Enqueue (sentence);
 			}
+			endIt = true;
+
+			DisableButtons ();
 			DisplayNextSentence ();
 		}
 	}
@@ -99,11 +141,19 @@ public class DialogueManager : MonoBehaviour {
 		option3.gameObject.SetActive (true);
 
 	}
+	void DisableButtons()
+	{
+		continueButton.gameObject.SetActive (true);
+		option1.gameObject.SetActive (false);
+		option2.gameObject.SetActive (false);
+		option3.gameObject.SetActive (false);
+	}
 	void EndDialogue()
 	{
 		
-		Debug.Log ("End of conversations");
+		Debug.Log ("End of all things dia");
 		DiaCanvas.enabled = false;
+		Time.timeScale = 1;
 	}
 	/*void removeListeners(){
 		option1.onClick.RemoveAllListeners ();

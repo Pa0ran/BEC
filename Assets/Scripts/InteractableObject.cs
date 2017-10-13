@@ -9,10 +9,13 @@ public class InteractableObject : MonoBehaviour {
 
 
 	//Dictionary for storing object + possible item to interact with
-	Item objectItem;
-	Dictionary<InteractableObject, Item> objectItemLink;
+	public Item objectItem;
+	private Inventory inv;
+	private bool pickedUp;
 
 	void Start () {
+		this.inv = GameObject.FindObjectOfType<Inventory> ();
+		this.pickedUp = false;
 		
 	}
 	
@@ -26,8 +29,9 @@ public class InteractableObject : MonoBehaviour {
 		Debug.Log (coll.gameObject.tag);
 		// if the object is tagged with Interactable, it is interactable
 		if (coll.gameObject.CompareTag ("Player"))  {
-			if (gameObject.CompareTag ("Interactable")) {
-				Destroy (gameObject);
+			if (gameObject.CompareTag ("Interactable") && !pickedUp) {
+				pickedUp = true;
+				inv.AddItem (objectItem);
 			}
 		}
 	}

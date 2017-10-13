@@ -4,9 +4,14 @@ using UnityEngine;
 
 public class DialogueTrigger : MonoBehaviour {
 
+	public int optionChoice = -1;
+	public bool doneConversation;
+	DialogueManager DM;
 	public Dialogue dialogue;
 	public void TriggerDialogue()
 	{
-		FindObjectOfType<DialogueManager> ().StartDialogue(dialogue);
+		DM = FindObjectOfType<DialogueManager> ();
+		DM.StartDialogue (dialogue);
+		DM.DT = GetComponent <DialogueTrigger> ();
 	}
 }

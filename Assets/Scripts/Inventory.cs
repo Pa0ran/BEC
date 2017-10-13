@@ -5,14 +5,17 @@ using UnityEngine.UI;
 
 public class Inventory : MonoBehaviour
 {
+	public GameObject Sound;
 	public static Inventory inv;
 	public Image[] itemImages = new Image[itemSlots];
 	public Item[] items = new Item[itemSlots];
 	public const int itemSlots = 4;
 	GameController GC;
+	PlaySound PS;
 	void Start()
 	{
 		GC = FindObjectOfType<GameController> ();
+		PS = gameObject.GetComponent <PlaySound> ();
 	}
 
 	public void AddItem(Item itemToAdd)
@@ -20,11 +23,12 @@ public class Inventory : MonoBehaviour
 		Debug.Log (itemToAdd);
 		for (int i = 0; i < items.Length; i++)
 		{
-			if (items[i] == null)
+			if (items[i] == null && !ContainsItem(itemToAdd))
 			{
 				items[i] = itemToAdd;
 				itemImages[i].sprite = itemToAdd.sprite;
 				itemImages[i].enabled = true;
+				PS.PlayASound ();
 				return;
 			}
 		}
@@ -51,6 +55,15 @@ public class Inventory : MonoBehaviour
 		return itemImages [slot];
 	}
 
+	public bool ContainsItem(Item i) {
+		for (int index = 0; index < 4; index++) {
+			if (items [index] == i) {
+				return true;
+			}
+		}
+		return false;
+	}
+
 	/*public int GetSize() {
 		int sum = 0;
 		for (int i = 0; i < 4; i++) {
@@ -71,5 +84,6 @@ public class Inventory : MonoBehaviour
 			}
 		}
 		return temp;
-	}*/
+	} */
 }
+

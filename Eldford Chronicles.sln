@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eldford Chronicles", "Assembly-CSharp.csproj", "{B19C9A45-1673-662D-1188-BC8244D14DD7}"
+EndProject
+Project("{711A94E2-9B30-85DF-41CA-58B2D3CC1393}") = "Eldford Chronicles", "Assembly-UnityScript.unityproj", "{136CA4CD-C51C-3EAC-D5E4-101E8B0F6384}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eldford Chronicles", "Assembly-CSharp-Editor.csproj", "{551E1E5B-F0BD-1392-F684-7917CCF847AE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B19C9A45-1673-662D-1188-BC8244D14DD7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B19C9A45-1673-662D-1188-BC8244D14DD7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B19C9A45-1673-662D-1188-BC8244D14DD7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B19C9A45-1673-662D-1188-BC8244D14DD7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{136CA4CD-C51C-3EAC-D5E4-101E8B0F6384}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{136CA4CD-C51C-3EAC-D5E4-101E8B0F6384}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{136CA4CD-C51C-3EAC-D5E4-101E8B0F6384}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{136CA4CD-C51C-3EAC-D5E4-101E8B0F6384}.Release|Any CPU.Build.0 = Release|Any CPU
+		{551E1E5B-F0BD-1392-F684-7917CCF847AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{551E1E5B-F0BD-1392-F684-7917CCF847AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{551E1E5B-F0BD-1392-F684-7917CCF847AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{551E1E5B-F0BD-1392-F684-7917CCF847AE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
+	EndGlobalSection
+EndGlobal

@@ -1,12 +1,15 @@
 fileFormatVersion: 2
 guid: 15e502165c7835b4880aa36be3dd9460
-timeCreated: 1506666467
+timeCreated: 1507293255
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
     21300000: Dungeon_floor1
     21300002: Stone_stairs1
     21300004: terrain_atlas_0
+    21300006: terrain_atlas_1
+    21300008: tree_top1
+    21300010: tree_bottom1
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -33,7 +36,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
+    filterMode: 0
     aniso: -1
     mipBias: -1
     wrapU: 1
@@ -121,6 +124,48 @@ TextureImporter:
         y: 544
         width: 64
         height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: terrain_atlas_1
+      rect:
+        serializedVersion: 2
+        x: 775
+        y: 449
+        width: 83
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tree_top1
+      rect:
+        serializedVersion: 2
+        x: 865
+        y: 544
+        width: 94
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tree_bottom1
+      rect:
+        serializedVersion: 2
+        x: 816
+        y: 375
+        width: 62
+        height: 41
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
